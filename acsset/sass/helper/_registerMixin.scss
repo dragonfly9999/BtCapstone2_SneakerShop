@@ -1,0 +1,5 @@
+// Mixin
+@mixin styleText($fs, $color) {
+    font-size: $fs;
+    color: $color;
+  }

@@ -1,0 +1,84 @@
+// FOOTER CSS
+footer {
+    border: .5px solid gray;
+    margin-top: 60px;
+    .up_footer {
+      .container {
+        padding: $p_foot_container;
+        .foot_up {
+          .up_content {
+            .col-3 {
+              border-right: 1px solid #acacac;
+  
+              h4 {
+                font-size: $fs_2;
+              }
+              ul {
+                padding: $ps_list;
+                li {
+                  list-style: none;
+                  a {
+                    @include styleText($fs_1, $color_black_1);
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+            .col-6 {
+              h4 {
+                font-size: $fs_2;
+              }
+              a {
+                @include styleText($fs_1, $color_red_1);
+                text-decoration: none;
+              }
+              p {
+                font-size: $fs_1;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .down_footer {
+      
+      background-color: #ECECEC;
+      .container {
+        padding: $p_foot_container;
+        .foot_down {
+          .down_content {
+            .col-3 {
+              border-right: 1px solid #acacac;
+  
+              h4 {
+                font-size: $fs_2;
+              }
+             p{
+              font-size: $fs_1;
+              margin: 0;
+  
+             }
+             a{
+              @include styleText($fs_1, $color_red_1);
+                text-decoration: none;
+             }
+            }
+            .col-6 {
+              h4 {
+                font-size: $fs_2;
+              }
+              a {
+                @include styleText($fs_1, $color_red_1);
+                text-decoration: none;
+              }
+              p {
+                font-size: $fs_1;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
