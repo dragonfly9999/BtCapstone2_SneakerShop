@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1240px;
+}
+// Mixin
+@mixin styleText($fs, $color) {
+    font-size: $fs;
+    color: $color;
+  }
+// Tạo biến
+$color_gray_1: #ececec;
+$color_purpler_2: #ae18e2;
+$color_red_1: red;
+$color_black_1: black;
+
+// FONT-SIZE
+$fs_1: 13px;
+$fs_2: 18px;
+$fs_3: 20px;
+// FONT-WEIGHT
+$fw_300: 300;
+$fw_400: 400;
+$fw_500: 500;
+$fw_700: 700;
+$fw_bold: bold;
+// PADDING
+$pe_footText: 105px;
+$ps_list: 0;
+$p_foot_container: 48px 80px;
+$p_register_container: 48px 200px;
+
+// MARGIN
+
+header {
+  .header_top {
+    background-color: black;
+    .header_content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        img {
+          width: 116px;
+          height: 32px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-left: 24px;
+        }
+      }
+      .header_login {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 50px;
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 16px;
+          font-weight: 300;
+          margin: 0 15px;
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  .header_bottom {
+    .header_content {
+      ul {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        margin-left: 20px;
+        margin-top: 10px;
+        li {
+          position: relative;
+          margin: 0 10px;
+          a {
+            text-decoration: none;
+            color: rgb(37, 37, 37);
+          }
+          &::before {
+            content: "";
+            width: 0;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: all 0.5s;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+          &.active {
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// PRODUCT CSS 
+.product {
+  margin-bottom: 70px;
+  .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0;
+      h2 {
+          text-align: center;
+          margin: 50px 0;
+      }
+      .product_content {
+          // margin: 0 200px;
+          .row {
+              justify-content: space-between;
+              .col-4 {
+                  padding: 0;
+                  max-width: 300px;
+                  a {
+                      text-decoration: none;
+                      .item_top {
+                          background-color: rgb(188, 182, 182);
+                          .img_product {
+                              padding: 30px;
+                              img {
+                                  width: 100%;
+                              }
+                          }
+                          .product_name {
+                              padding-left: 15px;
+                              color: black;
+                          }
+                          .product_description {
+                              padding-left: 15px;
+                              margin: 0;
+                              color: gray;
+                          }
+                      }
+                      .item_bottom {
+                          display: grid;
+                          grid-template-columns: 1fr 1fr;
+                          justify-content: space-between;
+                          // height: 60px;
+                          // font-size: 50px;
+                          button {
+                              padding: 5px 20px;
+                              background-color: #F8B653;
+                              font-size: 24px;
+                              font-weight: 200;
+                              border: none;
+                          }
+                          p {
+                              font-size: 20px;
+                              padding: 10px 55px;
+                              background-color: gray;
+                              margin: 0;
+                              text-align: center;
+                              color: black;
+                              font-weight: 500;
+                          }
+                      }
+                  }
+              }
+              
+          }
+      }
+  }
+}
+
+// FOOTER CSS
+footer {
+  border: 0.5px solid gray;
+  margin-top: 60px;
+  .up_footer {
+    .container {
+      padding: $p_foot_container;
+      .foot_up {
+        .up_content {
+          .col-3 {
+            border-right: 1px solid #acacac;
+
+            h4 {
+              font-size: $fs_2;
+            }
+            ul {
+              padding: $ps_list;
+              li {
+                list-style: none;
+                a {
+                  @include styleText($fs_1, $color_black_1);
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .col-6 {
+            h4 {
+              font-size: $fs_2;
+            }
+            a {
+              @include styleText($fs_1, $color_red_1);
+              text-decoration: none;
+            }
+            p {
+              font-size: $fs_1;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .down_footer {
+    background-color: #ececec;
+    .container {
+      padding: $p_foot_container;
+      .foot_down {
+        .down_content {
+          .col-3 {
+            border-right: 1px solid #acacac;
+
+            h4 {
+              font-size: $fs_2;
+            }
+            p {
+              font-size: $fs_1;
+              margin: 0;
+            }
+            a {
+              @include styleText($fs_1, $color_red_1);
+              text-decoration: none;
+            }
+          }
+          .col-6 {
+            h4 {
+              font-size: $fs_2;
+            }
+            a {
+              @include styleText($fs_1, $color_red_1);
+              text-decoration: none;
+            }
+            p {
+              font-size: $fs_1;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
